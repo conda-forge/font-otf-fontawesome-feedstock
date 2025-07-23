@@ -1,5 +1,6 @@
 {% set name = "font-otf-fontawesome" %}
 {% set version = "7.0.0" %}
+{% set major_version = version.split(".")[0] %}
 
 package:
   name: {{ name|lower }}
@@ -19,9 +20,9 @@ requirements:
 
 test:
   commands:
-    - test -f "${PREFIX}/fonts/Font Awesome 6 Brands-Regular-400.otf"  # [unix]
-    - test -f "${PREFIX}/fonts/Font Awesome 6 Free-Regular-400.otf"    # [unix]
-    - test -f "${PREFIX}/fonts/Font Awesome 6 Free-Solid-900.otf"      # [unix]
+    - test -f "${PREFIX}/fonts/Font Awesome {{ major_version }} Brands-Regular-400.otf"  # [unix]
+    - test -f "${PREFIX}/fonts/Font Awesome {{ major_version }} Free-Regular-400.otf"    # [unix]
+    - test -f "${PREFIX}/fonts/Font Awesome {{ major_version }} Free-Solid-900.otf"      # [unix]
 
 about:
   home: https://fontawesome.com/
